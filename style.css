@@ -38,6 +38,36 @@ body {
 
 section {
     padding: 5rem 0;
+    position: relative;
+}
+
+/* Section Backgrounds */
+.hero {
+    background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9)), 
+                url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80') no-repeat center center/cover;
+}
+
+#features {
+    background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)), 
+                url('https://images.unsplash.com/photo-1623874514711-0f321325f318?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+    background-attachment: fixed;
+}
+
+#benefits {
+    background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.93)), 
+                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+    background-attachment: fixed;
+}
+
+#testimonials {
+    background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.95)), 
+                url('https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+    background-attachment: fixed;
+}
+
+footer {
+    background: linear-gradient(rgba(2, 6, 23, 0.95), rgba(2, 6, 23, 0.98)), 
+                url('https://images.unsplash.com/photo-1486401899868-0e435ed85128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
 }
 
 h2 {
@@ -205,8 +235,6 @@ nav ul li a:hover {
     align-items: center;
     justify-content: center;
     padding-top: 0;
-    background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9)), 
-                url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80') no-repeat center center/cover;
     position: relative;
 }
 
@@ -214,6 +242,8 @@ nav ul li a:hover {
     text-align: center;
     max-width: 800px;
     padding: 0 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .hero h1 {
@@ -240,6 +270,7 @@ nav ul li a:hover {
     font-size: 1.5rem;
     animation: bounce 2s infinite;
     cursor: pointer;
+    z-index: 1;
 }
 
 @keyframes bounce {
@@ -255,10 +286,6 @@ nav ul li a:hover {
 }
 
 /* Features Section */
-.features {
-    background-color: var(--background);
-}
-
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -297,10 +324,6 @@ nav ul li a:hover {
 }
 
 /* Testimonials */
-.testimonials {
-    background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95));
-}
-
 .testimonial-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -349,10 +372,6 @@ nav ul li a:hover {
 }
 
 /* Benefits Section */
-.benefits {
-    background-color: var(--background);
-}
-
 .benefits-container {
     display: flex;
     flex-direction: column;
@@ -394,6 +413,8 @@ nav ul li a:hover {
     border-radius: 10px;
     margin: 3rem auto;
     max-width: 1200px;
+    position: relative;
+    z-index: 1;
 }
 
 .cta-section h2 {
@@ -413,9 +434,61 @@ nav ul li a:hover {
     margin: 0 auto 2rem;
 }
 
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.8);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    padding: 2rem;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.modal-content p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+    color: var(--primary);
+}
+
 /* Footer */
 footer {
-    background-color: #020617;
     padding: 3rem 0 1.5rem;
 }
 
@@ -424,6 +497,8 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 .footer-logo {
@@ -499,6 +574,8 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     color: var(--text-muted);
     font-size: 0.8rem;
+    position: relative;
+    z-index: 1;
 }
 
 /* Responsive Adjustments */
@@ -514,6 +591,10 @@ footer {
 
     .benefit-item.reverse {
         flex-direction: column;
+    }
+
+    #features, #benefits, #testimonials {
+        background-attachment: scroll;
     }
 }
 
@@ -544,6 +625,14 @@ footer {
     h2 {
         font-size: 2rem;
     }
+
+    .modal-content {
+        padding: 1.5rem;
+    }
+
+    .modal-content h3 {
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 576px) {
@@ -562,5 +651,9 @@ footer {
 
     .footer-container {
         grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        max-width: 90%;
     }
 }
