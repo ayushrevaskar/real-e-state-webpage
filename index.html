@@ -5,967 +5,262 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="RealViewImmersive - Cutting-edge immersive technology solutions for the real estate industry">
     <title>RealViewImmersive - Immersive Solutions for Real Estate</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap&font-display=swap" rel="stylesheet">
     <style>
-        /* Base Styles */
-        :root {
-            --background: #0f172a;
-            --primary: #3b82f6;
-            --primary-dark: #2563eb;
-            --text-light: #e2e8f0;
-            --text-muted: #94a3b8;
-            --gradient-start: #60a5fa;
-            --gradient-end: #8b5cf6;
-            --card-bg: #1e293b;
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--background);
-            color: #ffffff;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        section {
-            padding: 5rem 0;
-            position: relative;
-        }
-
-        /* Section Backgrounds */
-        .hero {
-            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9)), 
-                        url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80') no-repeat center center/cover;
-        }
-
-        #features {
-            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)), 
-                        url('https://images.unsplash.com/photo-1623874514711-0f321325f318?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
-            background-attachment: fixed;
-        }
-
-        #benefits {
-            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.93)), 
-                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
-            background-attachment: fixed;
-        }
-
-        #testimonials {
-            background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.95)), 
-                        url('https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
-            background-attachment: fixed;
-        }
-
-        footer {
-            background: linear-gradient(rgba(2, 6, 23, 0.95), rgba(2, 6, 23, 0.98)), 
-                        url('https://images.unsplash.com/photo-1486401899868-0e435ed85128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            position: relative;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
-        }
-
-        /* Navigation Bar */
-        header {
-            background-color: rgba(15, 23, 42, 0.95);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-        }
-
-        header.scrolled {
-            padding: 0.5rem 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo span {
-            color: var(--primary);
-        }
-
-        .logo-icon {
-            font-size: 1.8rem;
-            color: var(--primary);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-        }
-
-        nav ul li a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: color 0.2s ease;
-            position: relative;
-        }
-
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary);
-            transition: width 0.3s ease;
-        }
-
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-
-        nav ul li a:hover {
-            color: var(--primary);
-        }
-
-        /* Buttons */
-        .cta-button {
-            background-color: white;
-            color: var(--background);
-            border: none;
-            padding: 0.6rem 1.5rem;
-            border-radius: 100px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .cta-button:hover {
-            background-color: #f1f5f9;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero-button {
-            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
-            color: white;
-            border: none;
-            padding: 0.8rem 2.5rem;
-            border-radius: 100px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: 1.1rem;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
-        }
-
-        .hero-button:hover::before {
-            left: 100%;
-        }
-
-        .hero-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding-top: 0;
-            position: relative;
-        }
-
-        .hero-content {
-            text-align: center;
-            max-width: 800px;
-            padding: 0 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .scroll-down {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--text-light);
-            font-size: 1.5rem;
-            animation: bounce 2s infinite;
-            cursor: pointer;
-            z-index: 1;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0) translateX(-50%);
-            }
-            40% {
-                transform: translateY(-20px) translateX(-50%);
-            }
-            60% {
-                transform: translateY(-10px) translateX(-50%);
-            }
-        }
-
-        /* Features Section */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .feature-card {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            padding: 2rem;
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            border-color: var(--primary);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .feature-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: white;
-        }
-
-        .feature-card p {
-            color: var(--text-muted);
-        }
-
-        /* Testimonials */
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background-color: var(--card-bg);
-            padding: 2rem;
-            border-radius: 10px;
-            position: relative;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: 10px;
-            left: 20px;
-            font-size: 5rem;
-            color: rgba(59, 130, 246, 0.1);
-            font-family: serif;
-            line-height: 1;
-        }
-
-        .testimonial-content {
-            margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .author-info h4 {
-            font-size: 1rem;
-            margin-bottom: 0.2rem;
-        }
-
-        .author-info p {
-            color: var(--text-muted);
-            font-size: 0.8rem;
-        }
-
-        /* Benefits Section */
-        .benefits-container {
-            display: flex;
-            flex-direction: column;
-            gap: 3rem;
-        }
-
-        .benefit-item {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-        }
-
-        .benefit-item.reverse {
-            flex-direction: row-reverse;
-        }
-
-        .benefit-content {
-            flex: 1;
-        }
-
-        .benefit-image {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .benefit-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            text-align: center;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            padding: 4rem 0;
-            border-radius: 10px;
-            margin: 3rem auto;
-            max-width: 1200px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta-section h2 {
-            color: white;
-            background: none;
-            -webkit-background-clip: initial;
-            background-clip: initial;
-        }
-
-        .cta-section h2::after {
-            background: white;
-        }
-
-        .cta-section p {
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(15, 23, 42, 0.85);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            will-change: opacity;
-        }
-
-        .modal.active {
-            display: flex;
-            opacity: 1;
-        }
-
-        .modal-content {
-            background: linear-gradient(135deg, var(--card-bg), #2a3752);
-            border-radius: 12px;
-            max-width: 90vw;
-            width: 100%;
-            max-height: 85vh;
-            padding: 2rem;
-            position: relative;
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
-            display: flex;
-            gap: 1.5rem;
-            transform: scale(0.85);
-            opacity: 0;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-            overflow-y: auto;
-            will-change: transform, opacity;
-        }
-
-        .modal-content.active {
-            transform: scale(1);
-            opacity: 1;
-        }
-
-        .modal-content h3 {
-            font-size: clamp(1.5rem, 4vw, 2rem);
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-align: center;
-            position: relative;
-        }
-
-        .modal-content h3::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 2px;
-            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
-        }
-
-        .modal-text {
-            flex: 1;
-            color: var(--text-light);
-        }
-
-        .modal-text p {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-            font-size: clamp(0.9rem, 2.5vw, 1rem);
-        }
-
-        .modal-image {
-            flex: 1;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-            max-height: 40vh;
-            aspect-ratio: 4/3;
-            display: none; /* Hidden by default, shown via media queries */
-        }
-
-        .modal-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: var(--text-light);
-            cursor: pointer;
-            transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
-        }
-
-        .modal-close:hover {
-            background: var(--primary);
-            color: white;
-            transform: rotate(90deg);
-        }
-
-        .modal-button {
-            display: block;
-            margin: 1.5rem auto 0;
-            text-align: center;
-            padding: 0.7rem 2rem;
-            font-size: clamp(0.9rem, 2.5vw, 1rem);
-        }
-
-        /* Footer */
-        footer {
-            padding: 3rem 0 1.5rem;
-        }
-
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 1rem;
-            display: inline-block;
-        }
-
-        .footer-logo span {
-            color: var(--primary);
-        }
-
-        .footer-about p {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-links a {
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            transition: color 0.2s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--primary);
-        }
-
-        .footer-links h3 {
-            color: white;
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-
-        .footer-links h3::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--primary);
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: var(--text-muted);
-            font-size: 0.8rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-
-            .benefit-item {
-                flex-direction: column;
-                gap: 2rem;
-            }
-
-            .benefit-item.reverse {
-                flex-direction: column;
-            }
-
-            #features, #benefits, #testimonials {
-                background-attachment: scroll;
-            }
-
-            .modal-content {
-                flex-direction: column;
-                max-width: 85vw;
-                padding: 1.5rem;
-            }
-
-            .modal-image {
-                display: block;
-                max-width: 100%;
-                max-height: 30vh;
-                aspect-ratio: 16/9;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            section {
-                padding: 3rem 0;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            .modal-content {
-                padding: 1.2rem;
-                max-height: 80vh;
-            }
-
-            .modal-content h3 {
-                font-size: clamp(1.3rem, 3.5vw, 1.6rem);
-            }
-
-            .modal-text p {
-                font-size: clamp(0.85rem, 2.2vw, 0.95rem);
-                margin-bottom: 1.2rem;
-            }
-
-            .modal-image {
-                max-height: 25vh;
-            }
-
-            .modal-button {
-                padding: 0.6rem 1.8rem;
-            }
-        }
-
-        @media (min-width: 769px) {
-            .modal-image {
-                display: block;
-            }
-        }
-
-        @media (max-width: 360px) {
-            .modal-content {
-                max-width: 92vw;
-                padding: 1rem;
-                max-height: 75vh;
-            }
-
-            .modal-content h3 {
-                font-size: clamp(1.2rem, 3vw, 1.4rem);
-                margin-bottom: 1rem;
-            }
-
-            .modal-text p {
-                font-size: clamp(0.8rem, 2vw, 0.9rem);
-                margin-bottom: 1rem;
-            }
-
-            .modal-image {
-                display: none;
-            }
-
-            .modal-button {
-                padding: 0.5rem 1.5rem;
-                font-size: clamp(0.8rem, 2vw, 0.9rem);
-            }
-
-            .modal-close {
-                width: 36px;
-                height: 36px;
-                font-size: 1rem;
-            }
+        :root{--background:#0a0f24;--primary:#4f46e5;--primary-dark:#3730a3;--text-light:#f1f5f9;--text-muted:#a1a1aa;--gradient-start:#6366f1;--gradient-end:#a855f7;--card-bg:#1f2937;--accent:#22d3ee;--transition:all 0.4s cubic-bezier(0.4,0,0.2,1)}
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif}
+        html{scroll-behavior:smooth}
+        body{background-color:var(--background);color:#fff;line-height:1.7;overflow-x:hidden}
+        .container{width:90%;max-width:1280px;margin:0 auto;padding:0 24px}
+        section{padding:5rem 0;position:relative}
+        section.highlight{animation:highlightSection 1s ease forwards}
+        @keyframes highlightSection{0%{background-color:rgba(79,70,229,0.15)}100%{background-color:transparent}}
+        .scroll-progress{position:fixed;top:0;left:0;width:100%;height:4px;background:rgba(255,255,255,0.08);z-index:1100}
+        .scroll-progress-bar{height:100%;background:linear-gradient(to right,var(--gradient-start),var(--gradient-end));width:0}
+        .sticky-cta{position:fixed;bottom:2rem;right:2rem;background:linear-gradient(135deg,var(--gradient-start),var(--gradient-end));color:#fff;border:none;padding:0.8rem 1.5rem;border-radius:50px;font-weight:600;cursor:pointer;box-shadow:0 6px 20px rgba(79,70,229,0.4);display:flex;align-items:center;gap:0.5rem;opacity:0;transform:translateY(30px) scale(0.9);transition:var(--transition);z-index:1000;animation:pulseCta 2s infinite}
+        .sticky-cta.visible{opacity:1;transform:translateY(0) scale(1)}
+        .sticky-cta:hover{transform:translateY(-5px) scale(1.1) rotate(5deg);box-shadow:0 10px 30px rgba(79,70,229,0.6)}
+        @keyframes pulseCta{0%{transform:translateY(0) scale(1)}50%{transform:translateY(-3px) scale(1.05)}100%{transform:translateY(0) scale(1)}}
+        .hero,#features,#benefits,#testimonials,#pricing,footer{background-size:cover;background-position:center;position:relative}
+        .hero{background:linear-gradient(rgba(10,15,36,0.7),rgba(10,15,36,0.9)),url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&format=webp');animation:parallax 20s linear infinite}
+        #features{background:linear-gradient(rgba(10,15,36,0.9),rgba(10,15,36,0.95)),url('https://images.unsplash.com/photo-1600566753376-77c1b1725fd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&format=webp')}
+        #benefits{background:linear-gradient(rgba(10,15,36,0.85),rgba(10,15,36,0.93)),url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&format=webp')}
+        #testimonials{background:linear-gradient(rgba(10,15,36,0.88),rgba(10,15,36,0.95)),url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&format=webp')}
+        #pricing{background:linear-gradient(rgba(10,15,36,0.9),rgba(10,15,36,0.95)),url('https://images.unsplash.com/photo-1600585153490-76fb20a0f2b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&format=webp')}
+        footer{background:linear-gradient(rgba(2,6,23,0.95),rgba(2,6,23,0.98)),url('https://images.unsplash.com/photo-1600585152915-d208bec867a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&format=webp')}
+        @keyframes parallax{0%{background-position:50% 0}100%{background-position:50% 100px}}
+        h2{font-size:2.5rem;font-weight:700;margin-bottom:2rem;text-align:center;background:linear-gradient(to right,var(--gradient-start),var(--gradient-end));-webkit-background-clip:text;background-clip:text;color:transparent}
+        h2::after{content:'';position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);width:80px;height:3px;background:linear-gradient(to right,var(--gradient-start),var(--gradient-end));border-radius:2px}
+        header{background-color:rgba(10,15,36,0.95);padding:1rem 0;position:fixed;width:100%;top:0;z-index:1000;backdrop-filter:blur(10px);box-shadow:0 2px 10px rgba(0,0,0,0.15)}
+        header.scrolled{padding:0.5rem 0;box-shadow:0 4px 20px rgba(0,0,0,0.25)}
+        .header-container{display:flex;justify-content:space-between;align-items:center}
+        .logo{font-size:1.5rem;font-weight:700;color:#fff;text-decoration:none;display:flex;align-items:center;gap:0.5rem}
+        .logo:hover{transform:scale(1.1)}
+        .logo span{color:var(--primary)}
+        .logo-icon{font-size:1.8rem;color:var(--primary)}
+        .hamburger{display:none;flex-direction:column;justify-content:space-between;width:28px;height:20px;cursor:pointer}
+        .hamburger span{background:#fff;height:3px;border-radius:2px}
+        .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+        .hamburger.active span:nth-child(2){opacity:0}
+        .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px)}
+        nav ul{list-style:none;display:flex;gap:2rem;align-items:center}
+        nav ul li a{color:#fff;text-decoration:none;font-weight:600;font-size:1rem;padding:0.5rem 0}
+        nav ul li a:hover{color:var(--accent);transform:translateY(-3px)}
+        nav ul li a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background-color:var(--accent);transition:width 0.4s}
+        nav ul li a:hover::after{width:100%}
+        .cta-button,.hero-button{position:relative;border-radius:50px;font-weight:600;display:inline-flex;align-items:center;gap:0.5rem}
+        .cta-button{background-color:#fff;color:var(--background);border:none;padding:0.6rem 1.5rem;font-size:0.9rem}
+        .hero-button{background:linear-gradient(135deg,var(--gradient-start),var(--gradient-end));color:#fff;border:none;padding:0.8rem 2.5rem;font-size:1.1rem;box-shadow:0 4px 15px rgba(79,70,229,0.4)}
+        .cta-button:hover,.hero-button:hover{transform:translateY(-4px) scale(1.08);box-shadow:0 8px 25px rgba(79,70,229,0.6)}
+        .hero{height:100vh;display:flex;align-items:center;justify-content:center}
+        .hero-content{text-align:center;max-width:800px;padding:0 20px}
+        .hero h1{font-size:3.5rem;font-weight:700;margin-bottom:1.5rem;opacity:0;transform:translateY(30px);animation:fadeSlideIn 1.2s ease forwards}
+        .hero p{font-size:1.2rem;color:var(--text-muted);margin-bottom:2.5rem;max-width:600px;margin-left:auto;margin-right:auto;opacity:0;transform:translateY(30px);animation:fadeSlideIn 1.4s ease 0.2s forwards}
+        .hero-button{opacity:0;transform:translateY(30px);animation:fadeSlideIn 1.6s ease 0.4s forwards}
+        @keyframes fadeSlideIn{to{opacity:1;transform:translateY(0)}}
+        .scroll-down{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:#fff;font-size:1.5rem;animation:bounce 2s infinite;cursor:pointer}
+        @keyframes bounce{0%,20%,50%,80%,100%{transform:translateY(0) translateX(-50%)}40%{transform:translateY(-20px) translateX(-50%)}60%{transform:translateY(-10px) translateX(-50%)}}
+        .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:3rem}
+        .feature-card{background-color:var(--card-bg);border-radius:10px;padding:2rem;border:1px solid rgba(255,255,255,0.08);opacity:0;transform:translateY(50px) scale(0.95);transition:transform 0.5s ease,opacity 0.5s ease,box-shadow 0.4s ease}
+        .feature-card.visible{opacity:1;transform:translateY(0) scale(1)}
+        .feature-card:hover{transform:translateY(-15px) scale(1.05);box-shadow:0 12px 30px rgba(0,0,0,0.3),0 0 20px rgba(79,70,229,0.4);border-color:var(--accent)}
+        .feature-icon{font-size:2.5rem;color:var(--primary);margin-bottom:1.5rem}
+        .feature-card:hover .feature-icon{transform:scale(1.2) rotate(10deg)}
+        .feature-card h3{font-size:1.3rem;margin-bottom:1rem;color:#fff}
+        .feature-card p{color:var(--text-muted)}
+        .testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+        .testimonial-card{background-color:var(--card-bg);padding:2rem;border-radius:10px;border:1px solid rgba(255,255,255,0.08);opacity:0;transform:translateX(-50px);transition:transform 0.5s ease,opacity 0.5s ease}
+        .testimonial-card.visible{opacity:1;transform:translateX(0)}
+        .testimonial-card:hover{transform:translateY(-10px);box-shadow:0 12px 30px rgba(0,0,0,0.3)}
+        .testimonial-card::before{content:'"';position:absolute;top:10px;left:20px;font-size:5rem;color:rgba(79,70,229,0.15);font-family:serif}
+        .testimonial-content{margin-bottom:1.5rem}
+        .testimonial-author{display:flex;align-items:center;gap:1rem}
+        .author-info h4{font-size:1rem;margin-bottom:0.2rem}
+        .author-info p{color:var(--text-muted);font-size:0.8rem}
+        .benefits-container{display:flex;flex-direction:column;gap:3rem}
+        .benefit-item{display:flex;align-items:center;gap:3rem;opacity:0;transform:translateY(50px);transition:transform 0.6s ease,opacity 0.6s ease}
+        .benefit-item.visible{opacity:1;transform:translateY(0)}
+        .benefit-item.reverse{flex-direction:row-reverse}
+        .benefit-content{flex:1}
+        .benefit-image{flex:1;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.3);transform:scale(0.9);transition:transform 0.6s ease}
+        .benefit-image.visible{transform:scale(1)}
+        .benefit-image:hover{transform:scale(1.08)}
+        .benefit-image img{width:100%;height:auto;display:block;loading:lazy}
+        .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:3rem}
+        .pricing-card{background-color:var(--card-bg);border-radius:10px;padding:2rem;text-align:center;border:1px solid rgba(255,255,255,0.08);opacity:0;transform:scale(0.95);transition:transform 0.5s ease,opacity 0.5s ease,box-shadow 0.4s ease}
+        .pricing-card.visible{opacity:1;transform:scale(1)}
+        .pricing-card:hover{transform:scale(1.1);box-shadow:0 12px 30px rgba(0,0,0,0.3),0 0 20px rgba(79,70,229,0.4);border-color:var(--accent)}
+        .pricing-card h3{font-size:1.5rem;margin-bottom:1rem;color:#fff}
+        .pricing-card .price{font-size:2rem;font-weight:700;color:var(--primary);margin-bottom:1rem}
+        .pricing-card .price span{font-size:1rem;font-weight:400;color:var(--text-muted)}
+        .pricing-card ul{list-style:none;margin-bottom:1.5rem}
+        .pricing-card ul li{margin-bottom:0.8rem;color:var(--text-muted)}
+        .cta-section{text-align:center;background:linear-gradient(135deg,var(--gradient-start),var(--gradient-end));padding:4rem 0;border-radius:10px;margin:3rem auto;max-width:1200px}
+        .cta-section h2{color:#fff;background:none}
+        .cta-section h2::after{background:#fff}
+        .cta-section p{color:rgba(255,255,255,0.95);max-width:600px;margin:0 auto 2rem}
+        .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(10,15,36,0.9);z-index:2000;align-items:center;justify-content:center;padding:1rem;opacity:0}
+        .modal.active{display:flex;animation:fadeInModal 0.5s ease forwards}
+        @keyframes fadeInModal{to{opacity:1}}
+        .modal-content{background:linear-gradient(135deg,var(--card-bg),#2d3748);border-radius:12px;max-width:90vw;width:100%;max-height:85vh;padding:2rem;border:1px solid rgba(79,70,229,0.25);box-shadow:0 12px 35px rgba(0,0,0,0.4);transform:scale(0.7);opacity:0;overflow-y:auto}
+        .modal-content.active{transform:scale(1);opacity:1}
+        .modal-content h3{font-size:clamp(1.5rem,4vw,2rem);margin-bottom:1.5rem;background:linear-gradient(to right,var(--gradient-start),var(--gradient-end));-webkit-background-clip:text;background-clip:text;color:transparent;text-align:center}
+        .modal-content h3::after{content:'';position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);width:50px;height:2px;background:linear-gradient(to right,var(--gradient-start),var(--gradient-end))}
+        .modal-text{color:#fff}
+        .modal-text p{color:var(--text-muted);margin-bottom:1.5rem;font-size:clamp(0.9rem,2.5vw,1rem)}
+        .modal-close{position:absolute;top:1rem;right:1rem;width:40px;height:40px;background:rgba(255,255,255,0.1);clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:#fff;cursor:pointer;transition:transform 0.4s ease,background 0.4s ease}
+        .modal-close:hover{background:var(--primary);transform:rotate(60deg) scale(1.1)}
+        .modal-button{display:block;margin:1.5rem auto 0;padding:0.7rem 2rem}
+        .contact-form{display:flex;flex-direction:column;gap:1.5rem;max-width:500px;margin:0 auto}
+        .form-group{position:relative}
+        .contact-form label{position:absolute;top:0.8rem;left:0.8rem;color:var(--text-muted);font-size:0.9rem;font-weight:500}
+        .contact-form input:focus + label,.contact-form textarea:focus + label,.contact-form select:focus + label,.contact-form input:not(:placeholder-shown) + label,.contact-form textarea:not(:placeholder-shown) + label,.contact-form select:not(:placeholder-shown) + label{top:-0.8rem;left:0.5rem;font-size:0.75rem;color:var(--accent);background:var(--card-bg);padding:0 0.3rem}
+        .contact-form input,.contact-form textarea,.contact-form select{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:0.8rem;color:#fff;font-size:0.9rem;width:100%}
+        .contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{outline:none;border-color:var(--accent)}
+        .contact-form input:invalid:not(:placeholder-shown),.contact-form textarea:invalid:not(:placeholder-shown),.contact-form select:invalid:not(:placeholder-shown){border-color:#f87171}
+        .contact-form textarea{resize:vertical;min-height:100px}
+        .contact-form button{background:linear-gradient(135deg,var(--gradient-start),var(--gradient-end));color:#fff;border:none;padding:0.8rem;border-radius:50px;font-weight:600;cursor:pointer;font-size:1rem;box-shadow:0 4px 15px rgba(79,70,229,0.4)}
+        .contact-form button:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 6px 20px rgba(79,70,229,0.6)}
+        .contact-form button:active{transform:translateY(0)}
+        .demo-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:1.5rem}
+        .demo-option-card{background:rgba(255,255,255,0.06);border-radius:8px;padding:1rem;cursor:pointer;border:1px solid transparent;text-align:center}
+        .demo-option-card:hover{background:rgba(255,255,255,0.12);border-color:var(--accent);transform:translateY(-8px) scale(1.05)}
+        .demo-option-card.selected{background:rgba(79,70,229,0.25);border-color:var(--accent);transform:scale(1.05)}
+        .demo-option-card i{font-size:1.5rem;color:var(--primary);margin-bottom:0.5rem}
+        .demo-option-card:hover i{transform:scale(1.2) rotate(15deg)}
+        .demo-option-card h4{font-size:1rem;margin-bottom:0.3rem}
+        .demo-option-card p{font-size:0.8rem;color:var(--text-muted)}
+        footer{padding:3rem 0 1.5rem}
+        .footer-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-bottom:2rem}
+        .footer-logo{font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:1rem;display:inline-block}
+        .footer-logo:hover{transform:scale(1.1)}
+        .footer-logo span{color:var(--primary)}
+        .footer-about p{color:var(--text-muted);margin-bottom:1.5rem}
+        .social-links{display:flex;gap:1rem}
+        .social-links a{color:var(--text-muted);font-size:1.2rem}
+        .social-links a:hover{color:var(--accent);transform:scale(1.3)}
+        .footer-links h3{color:#fff;font-size:1.1rem;margin-bottom:1.5rem}
+        .footer-links h3::after{content:'';position:absolute;bottom:-8px;left:0;width:40px;height:2px;background-color:var(--primary)}
+        .footer-links ul{list-style:none}
+        .footer-links li{margin-bottom:0.8rem}
+        .footer-links a{color:var(--text-muted);text-decoration:none}
+        .footer-links a:hover{color:var(--accent);transform:translateX(8px)}
+        .footer-bottom{text-align:center;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.05);color:var(--text-muted);font-size:0.8rem}
+        @media (max-width:768px){
+            .hamburger{display:flex}
+            nav{position:fixed;top:0;right:-100%;width:80%;height:100vh;background:linear-gradient(135deg,var(--card-bg),#2d3748);padding:4rem 2rem}
+            nav.active{right:0}
+            nav ul{flex-direction:column;gap:1.5rem}
+            nav ul li a{padding:0.5rem 0}
+            .header-container{justify-content:space-between}
+            .hero h1{font-size:2.2rem}
+            .hero p{font-size:1rem}
+            section{padding:3rem 0}
+            h2{font-size:2rem}
+            .benefit-item{flex-direction:column;gap:2rem}
+            .benefit-item.reverse{flex-direction:column}
+            .demo-options{grid-template-columns:1fr}
+            .sticky-cta{padding:0.7rem 1rem;font-size:0.9rem}
+        }
+        @media (max-width:992px){
+            .hero h1{font-size:2.8rem}
+            .modal-content{max-width:85vw;padding:1.5rem}
+        }
+        @media (max-width:360px){
+            .modal-content{max-width:95vw;padding:1.2rem}
+            nav{width:100%}
         }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
+    <div class="scroll-progress"><div class="scroll-progress-bar"></div></div>
     <header id="header">
         <div class="container header-container">
-            <a href="#" class="logo">
-                <i class="fas fa-vr-cardboard logo-icon"></i>
-                RealView<span>Immersive</span>
-            </a>
+            <a href="#" class="logo"><i class="fas fa-vr-cardboard logo-icon"></i>RealView<span>Immersive</span></a>
+            <div class="hamburger"><span></span><span></span><span></span></div>
             <nav>
                 <ul>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#benefits">Benefits</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><button class="cta-button demo-link"><i class="fas fa-calendar-alt"></i>Request Demo</button></li>
                 </ul>
             </nav>
-            <button class="cta-button">
-                <i class="fas fa-calendar-alt"></i>
-                Request Demo
-            </button>
         </div>
     </header>
-
-    <!-- Hero Section -->
+    <button class="sticky-cta demo-link"><i class="fas fa-calendar-check"></i>Book Demo</button>
     <section class="hero">
         <div class="hero-content">
             <h1>Revolutionizing Real Estate with Immersive Technology</h1>
             <p>Experience properties in stunning detail with our cutting-edge VR and AR solutions that bring listings to life and accelerate sales.</p>
-            <button class="hero-button">
-                <i class="fas fa-play-circle"></i> Watch Demo
-            </button>
+            <button class="hero-button demo-link"><i class="fas fa-play-circle"></i>Watch Demo</button>
         </div>
-        <div class="scroll-down" onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
-            <i class="fas fa-chevron-down"></i>
-        </div>
+        <div class="scroll-down" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})"><i class="fas fa-chevron-down"></i></div>
     </section>
-
-    <!-- Features Section -->
     <section id="features" class="features">
         <div class="container">
             <h2>Our Innovative Features</h2>
             <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-vr-cardboard"></i>
-                    </div>
-                    <h3>360° Virtual Tours</h3>
-                    <p>Fully immersive property walkthroughs that let clients explore every corner from anywhere in the world.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-cube"></i>
-                    </div>
-                    <h3>3D Property Models</h3>
-                    <p>Detailed digital twins of properties with accurate dimensions and layouts for precise evaluation.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-magic"></i>
-                    </div>
-                    <h3>AR Visualization</h3>
-                    <p>Overlay furniture and decor in real spaces or view properties in miniature dollhouse mode.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-paint-roller"></i>
-                    </div>
-                    <h3>Virtual Staging</h3>
-                    <p>Professionally designed interior options that can be switched instantly to suit buyer preferences.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-ruler-combined"></i>
-                    </div>
-                    <h3>Precise Measurements</h3>
-                    <p>Accurate digital measurement tools built right into the viewing experience.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Live Guided Tours</h3>
-                    <p>Interactive virtual showings where agents can guide multiple clients simultaneously.</p>
-                </div>
+                <div class="feature-card"><div class="feature-icon"><i class="fas fa-vr-cardboard"></i></div><h3>360° Virtual Tours</h3><p>Fully immersive property walkthroughs that let clients explore every corner from anywhere in the world.</p></div>
+                <div class="feature-card"><div class="feature-icon"><i class="fas fa-cube"></i></div><h3>3D Property Models</h3><p>Detailed digital twins of properties with accurate dimensions and layouts for precise evaluation.</p></div>
+                <div class="feature-card"><div class="feature-icon"><i class="fas fa-magic"></i></div><h3>AR Visualization</h3><p>Overlay furniture and decor in real spaces or view properties in miniature dollhouse mode.</p></div>
+                <div class="feature-card"><div class="feature-icon"><i class="fas fa-paint-roller"></i></div><h3>Virtual Staging</h3><p>Professionally designed interior options that can be switched instantly to suit buyer preferences.</p></div>
+                <div class="feature-card"><div class="feature-icon"><i class="fas fa-ruler-combined"></i></div><h3>Precise Measurements</h3><p>Accurate digital measurement tools built right into the viewing experience.</p></div>
+                <div class="feature-card"><div class="feature-icon"><i class="fas fa-users"></i></div><h3>Live Guided Tours</h3><p>Interactive virtual showings where agents can guide multiple clients simultaneously.</p></div>
             </div>
         </div>
     </section>
-
-    <!-- Benefits Section -->
     <section id="benefits" class="benefits">
         <div class="container">
             <h2>Transform Your Business</h2>
             <div class="benefits-container">
                 <div class="benefit-item">
-                    <div class="benefit-content">
-                        <h3>Expand Your Market Reach</h3>
-                        <p>Attract international and out-of-town buyers who can tour properties remotely without travel constraints. Our data shows listings with immersive tours receive 3x more inquiries from distant buyers.</p>
-                    </div>
-                    <div class="benefit-image">
-                        <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Global reach">
-                    </div>
+                    <div class="benefit-content"><h3>Expand Your Market Reach</h3><p>Attract international and out-of-town buyers who can tour properties remotely without travel constraints. Our data shows listings with immersive tours receive 3x more inquiries from distant buyers.</p></div>
+                    <div class="benefit-image"><img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80&format=webp" alt="Global reach" loading="lazy"></div>
                 </div>
                 <div class="benefit-item reverse">
-                    <div class="benefit-content">
-                        <h3>Close Deals Faster</h3>
-                        <p>Reduce sales cycles by helping serious buyers make confident decisions faster. Properties with our immersive tours sell 40% quicker on average compared to traditional listings.</p>
-                    </div>
-                    <div class="benefit-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Faster sales">
-                    </div>
+                    <div class="benefit-content"><h3>Close Deals Faster</h3><p>Reduce sales cycles by helping serious buyers make confident decisions faster. Properties with our immersive tours sell 40% quicker on average compared to traditional listings.</p></div>
+                    <div class="benefit-image"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&format=webp" alt="Faster sales" loading="lazy"></div>
                 </div>
                 <div class="benefit-item">
-                    <div class="benefit-content">
-                        <h3>Stand Out From Competition</h3>
-                        <p>Differentiate your listings with cutting-edge technology that captures attention. Our premium presentations generate 5x more engagement than standard photos.</p>
-                    </div>
-                    <div class="benefit-image">
-                        <img src="https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2067&q=80" alt="Competitive edge">
-                    </div>
+                    <div class="benefit-content"><h3>Stand Out From Competition</h3><p>Differentiate your listings with cutting-edge technology that captures attention. Our premium presentations generate 5x more engagement than standard photos.</p></div>
+                    <div class="benefit-image"><img src="https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2067&q=80&format=webp" alt="Competitive edge" loading="lazy"></div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
         <div class="container">
             <h2>Trusted by Industry Leaders</h2>
             <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>Implementing RealViewImmersive was a game-changer for our luxury portfolio. Our international clients can now experience properties as if they were physically present, resulting in a 40% increase in pre-sales and significantly fewer wasted trips.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Sarah Johnson</h4>
-                            <p>CEO, Elite Properties International</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>The virtual staging feature alone saved us over $120,000 in physical staging costs last quarter while allowing us to showcase multiple design options. Our sales cycle has shortened by 30% since implementation.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Michael Chen</h4>
-                            <p>Director of Sales, Urban Living Group</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>As a developer, being able to showcase unfinished properties with realistic renderings has accelerated our pre-construction sales. The ability for buyers to customize finishes in real-time has been particularly valuable.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>David Rodriguez</h4>
-                            <p>VP Development, Summit Builders</p>
-                        </div>
-                    </div>
-                </div>
+                <div class="testimonial-card"><div class="testimonial-content"><p>Implementing RealViewImmersive was a game-changer for our luxury portfolio. Our international clients can now experience properties as if they were physically present, resulting in a 40% increase in pre-sales and significantly fewer wasted trips.</p></div><div class="testimonial-author"><div class="author-info"><h4>Sarah Johnson</h4><p>CEO, Elite Properties International</p></div></div></div>
+                <div class="testimonial-card"><div class="testimonial-content"><p>The virtual staging feature alone saved us over $120,000 in physical staging costs last quarter while allowing us to showcase multiple design options. Our sales cycle has shortened by 30% since implementation.</p></div><div class="testimonial-author"><div class="author-info"><h4>Michael Chen</h4><p>Director of Sales, Urban Living Group</p></div></div></div>
+                <div class="testimonial-card"><div class="testimonial-content"><p>As a developer, being able to showcase unfinished properties with realistic renderings has accelerated our pre-construction sales. The ability for buyers to customize finishes in real-time has been particularly valuable.</p></div><div class="testimonial-author"><div class="author-info"><h4>David Rodriguez</h4><p>VP Development, Summit Builders</p></div></div></div>
             </div>
         </div>
     </section>
-
-    <!-- CTA Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>Our Pricing Plans</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card"><h3>Basic</h3><div class="price">$99<span>/month</span></div><ul><li>360° Virtual Tours</li><li>Basic Virtual Staging</li><li>Up to 5 Listings</li><li>Email Support</li></ul><button class="cta-button contact-link"><i class="fas fa-envelope"></i>Contact Us</button></div>
+                <div class="pricing-card"><h3>Pro</h3><div class="price">$299<span>/month</span></div><ul><li>All Basic Features</li><li>3D Property Models</li><li>AR Visualization</li><li>Up to 20 Listings</li><li>Priority Support</li></ul><button class="cta-button contact-link"><i class="fas fa-envelope"></i>Contact Us</button></div>
+                <div class="pricing-card"><h3>Enterprise</h3><div class="price">Custom</div><ul><li>All Pro Features</li><li>Live Guided Tours</li><li>Unlimited Listings</li><li>Dedicated Account Manager</li><li>Custom Integrations</li></ul><button class="cta-button contact-link"><i class="fas fa-envelope"></i>Contact Us</button></div>
+            </div>
+        </div>
+    </section>
     <section class="container">
         <div class="cta-section">
             <h2>Ready to Transform Your Business?</h2>
             <p>Join over 1,200 real estate professionals who are already using RealViewImmersive to close more deals faster and provide exceptional client experiences.</p>
-            <button class="hero-button">Get Started Today</button>
+            <button class="hero-button demo-link">Get Started Today</button>
         </div>
     </section>
-
-    <!-- About Us Modal -->
     <div id="aboutModal" class="modal">
         <div class="modal-content">
             <span class="modal-close">×</span>
@@ -973,136 +268,201 @@
             <div class="modal-text">
                 <p>Founded in 2018, RealViewImmersive is a pioneer in immersive technology, transforming the real estate industry with innovative VR and AR solutions. Our mission is to bridge the gap between properties and buyers, enabling seamless, engaging, and accurate property exploration from anywhere in the world.</p>
                 <p>We empower real estate professionals with cutting-edge tools like 360° virtual tours, 3D property models, and virtual staging. These solutions help attract more buyers, accelerate sales cycles, and differentiate listings in competitive markets. Trusted by over 1,200 industry leaders worldwide, our technology delivers measurable results and exceptional client experiences.</p>
-                <p>At RealViewImmersive, we are committed to pushing the boundaries of what’s possible, helping real estate professionals create lasting impressions and drive success in an ever-evolving market.</p>
-                <button class="hero-button modal-button">
-                    <i class="fas fa-info-circle"></i> Learn More
-                </button>
-            </div>
-            <div class="modal-image">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                     alt="RealViewImmersive Team" 
-                     loading="lazy" 
-                     onerror="this.src='https://via.placeholder.com/400x300?text=Team+Image'">
+                <p>At RealViewImmersive, we are committed to pushing the boundaries of what's possible, helping real estate professionals create lasting impressions and drive success in an ever-evolving market.</p>
+                <a href="https://realviewimmersive.com/about" target="_blank" class="hero-button modal-button"><i class="fas fa-info-circle"></i>Learn More</a>
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">×</span>
+            <h3>Contact Us</h3>
+            <div class="modal-text">
+                <p>Ready to revolutionize your real estate business? Fill out the form below to request a demo or get in touch with our team.</p>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group"><input type="text" id="name" name="name" required placeholder=" "><label for="name">Full Name</label></div>
+                    <div class="form-group"><input type="email" id="email" name="email" required placeholder=" "><label for="email">Email Address</label></div>
+                    <div class="form-group"><input type="text" id="company" name="company" placeholder=" "><label for="company">Company (Optional)</label></div>
+                    <div class="form-group"><textarea id="message" name="message" required placeholder=" "></textarea><label for="message">Message</label></div>
+                    <button type="submit"><i class="fas fa-paper-plane"></i>Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="demoModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">×</span>
+            <h3>Request a Demo</h3>
+            <div class="modal-text">
+                <p>Experience the power of our immersive technology firsthand. Select your preferred demo type and provide your details below to schedule a personalized demonstration.</p>
+                <div class="demo-options">
+                    <div class="demo-option-card selected"><i class="fas fa-desktop"></i><h4>Virtual Demo</h4><p>Live online demonstration with our product specialist</p></div>
+                    <div class="demo-option-card"><i class="fas fa-building"></i><h4>On-Site Demo</h4><p>In-person demonstration at your office (select locations)</p></div>
+                    <div class="demo-option-card"><i class="fas fa-video"></i><h4>Recorded Demo</h4><p>Pre-recorded walkthrough of our platform</p></div>
+                </div>
+                <form class="contact-form" id="demoForm">
+                    <div class="form-group"><input type="text" id="demo-name" name="name" required placeholder=" "><label for="demo-name">Full Name</label></div>
+                    <div class="form-group"><input type="email" id="demo-email" name="email" required placeholder=" "><label for="demo-email">Email Address</label></div>
+                    <div class="form-group"><input type="text" id="demo-company" name="company" required placeholder=" "><label for="demo-company">Company</label></div>
+                    <div class="form-group"><select id="demo-role" name="role" required><option value="" disabled selected></option><option value="agent">Real Estate Agent</option><option value="broker">Broker/Owner</option><option value="developer">Developer</option><option value="marketing">Marketing Professional</option><option value="other">Other</option></select><label for="demo-role">Your Role</label></div>
+                    <div class="form-group"><input type="date" id="demo-date" name="date" required placeholder=" "><label for="demo-date">Preferred Date</label></div>
+                    <div class="form-group"><input type="time" id="demo-time" name="time" required placeholder=" "><label for="demo-time">Preferred Time</label></div>
+                    <div class="form-group"><textarea id="demo-message" name="message" placeholder=" "></textarea><label for="demo-message">Special Requests (Optional)</label></div>
+                    <button type="submit"><i class="fas fa-calendar-check"></i>Schedule Demo</button>
+                </form>
+            </div>
+        </div>
+    </div>
     <footer id="contact">
         <div class="container">
             <div class="footer-container">
-                <div class="footer-about">
-                    <a href="#" class="footer-logo">RealView<span>Immersive</span></a>
-                    <p>Cutting-edge immersive technology solutions for the real estate industry. Helping professionals and clients connect with properties in revolutionary ways.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="#" class="about-link">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Partners</a></li>
-                        <li><a href="#">Developers</a></li>
-                        <li><a href="#">Events</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h3>Contact</h3>
-                    <ul>
-                        <li><a href="#">Sales: sales@realview.com</a></li>
-                        <li><a href="#">Support: support@realview.com</a></li>
-                        <li><a href="#">Phone: (555) 123-4567</a></li>
-                        <li><a href="#">Address: 123 Tech Ave, San Francisco</a></li>
-                    </ul>
-                </div>
+                <div class="footer-about"><a href="#" class="footer-logo">RealView<span>Immersive</span></a><p>Cutting-edge immersive technology solutions for the real estate industry. Helping professionals and clients connect with properties in revolutionary ways.</p><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div>
+                <div class="footer-links"><h3>Company</h3><ul><li><a href="#" class="about-link">About Us</a></li><li><a href="#">Careers</a></li><li><a href="#">Press</a></li><li><a href="#">Blog</a></li></ul></div>
+                <div class="footer-links"><h3>Resources</h3><ul><li><a href="#">Help Center</a></li><li><a href="#">Partners</a></li><li><a href="#">Developers</a></li><li><a href="#">Events</a></li></ul></div>
+                <div class="footer-links"><h3>Contact</h3><ul><li><a href="#">Sales: sales@realview.com</a></li><li><a href="#">Support: support@realview.com</a></li><li><a href="#">Phone: (555) 123-4567</a></li><li><a href="#">Address: 123 Tech Ave, San Francisco</a></li></ul></div>
             </div>
-            <div class="footer-bottom">
-                <p>© 2023 RealViewImmersive. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-            </div>
+            <div class="footer-bottom"><p>© 2023 RealViewImmersive. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p></div>
         </div>
     </footer>
-
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+    <script defer>
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('nav');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            nav.classList.toggle('active');
         });
 
-        // Header scroll effect
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Animation on scroll
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.feature-card, .testimonial-card, .benefit-item');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
-                
-                if (elementPosition < screenPosition) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
+        document.querySelectorAll('nav ul li a, .contact-link, .demo-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    hamburger.classList.remove('active');
+                    nav.classList.remove('active');
                 }
             });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId && targetId !== '#') {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        document.querySelectorAll('section').forEach(section => section.classList.remove('highlight'));
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        setTimeout(() => targetElement.classList.add('highlight'), 500);
+                    }
+                }
+            });
+        });
+
+        const header = document.getElementById('header');
+        const progressBar = document.querySelector('.scroll-progress-bar');
+        const stickyCta = document.querySelector('.sticky-cta');
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercent = (scrollTop / scrollHeight) * 100;
+            progressBar.style.width = `${scrollPercent}%`;
+            if (scrollTop > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+            if (scrollTop > 300) stickyCta.classList.add('visible');
+            else stickyCta.classList.remove('visible');
+        });
+
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .testimonial-card, .benefit-item, .pricing-card').forEach((el, i) => {
+            el.style.transitionDelay = `${i * 100}ms`;
+            observer.observe(el);
+        });
+
+        const modals = {
+            about: { link: '.about-link', modal: '#aboutModal', content: '#aboutModal .modal-content', close: '#aboutModal .modal-close' },
+            contact: { link: '.contact-link', modal: '#contactModal', content: '#contactModal .modal-content', close: '#contactModal .modal-close' },
+            demo: { link: '.demo-link', modal: '#demoModal', content: '#demoModal .modal-content', close: '#demoModal .modal-close' }
         };
 
-        // Set initial state for animation
-        document.querySelectorAll('.feature-card, .testimonial-card, .benefit-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        });
-
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-
-        // Modal functionality
-        const aboutLink = document.querySelector('.about-link');
-        const modal = document.getElementById('aboutModal');
-        const closeModal = document.querySelector('.modal-close');
-        const modalContent = document.querySelector('.modal-content');
-
-        aboutLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            modal.classList.add('active');
-            setTimeout(() => modalContent.classList.add('active'), 10); // Slight delay for smooth animation
-        });
-
-        closeModal.addEventListener('click', () => {
-            modalContent.classList.remove('active');
-            setTimeout(() => modal.classList.remove('active'), 300); // Match CSS transition duration
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modalContent.classList.remove('active');
-                setTimeout(() => modal.classList.remove('active'), 300);
+        Object.values(modals).forEach(({ link, modal, content, close }) => {
+            const modalElement = document.querySelector(modal);
+            const modalContent = document.querySelector(content);
+            const closeButton = document.querySelector(close);
+            const links = document.querySelectorAll(link);
+            if (modalElement && modalContent && closeButton) {
+                const openModal = () => {
+                    modalElement.classList.add('active');
+                    setTimeout(() => { modalContent.classList.add('active'); }, 10);
+                };
+                const closeModal = () => {
+                    modalContent.classList.remove('active');
+                    setTimeout(() => { modalElement.classList.remove('active'); }, 600);
+                };
+                links.forEach(l => l.addEventListener('click', e => {
+                    e.preventDefault();
+                    openModal();
+                }));
+                closeButton.addEventListener('click', e => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    closeModal();
+                });
+                modalElement.addEventListener('click', e => {
+                    if (e.target === modalElement) {
+                        e.preventDefault();
+                        closeModal();
+                    }
+                });
             }
+        });
+
+        document.querySelectorAll('.demo-option-card').forEach(option => {
+            option.addEventListener('click', () => {
+                document.querySelectorAll('.demo-option-card').forEach(opt => opt.classList.remove('selected'));
+                option.classList.add('selected');
+            });
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', e => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                company: formData.get('company'),
+                message: formData.get('message')
+            };
+            alert('Thank you for your submission! Our team will contact you soon.');
+            e.target.reset();
+            document.querySelector('#contactModal .modal-content').classList.remove('active');
+            setTimeout(() => { document.querySelector('#contactModal').classList.remove('active'); }, 600);
+        });
+
+        document.getElementById('demoForm').addEventListener('submit', e => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const selectedOption = document.querySelector('.demo-option-card.selected h4').textContent;
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                company: formData.get('company'),
+                role: formData.get('role'),
+                demoType: selectedOption,
+                date: formData.get('date'),
+                time: formData.get('time'),
+                message: formData.get('message')
+            };
+            alert(`Thank you for requesting a demo! We've scheduled your ${selectedOption} and will send confirmation details to ${data.email}.`);
+            e.target.reset();
+            document.querySelector('#demoModal .modal-content').classList.remove('active');
+            setTimeout(() => { document.querySelector('#demoModal').classList.remove('active'); }, 600);
         });
     </script>
 </body>
